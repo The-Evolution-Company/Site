@@ -6,26 +6,36 @@
     <meta name="google-site-verification" content="5DgU3IV5Pil2XBnzwlwdElbau5x9BtD8dpAh9EOSW-c" />
     <link rel="icon" type="image/jpg" href="logo.jpg">
     <title>The Evolution</title>
+    <script src="behave.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
-    <header>
-        <nav class="navbar">
-            <div class="logo-container">
-                <img src="logo.jpg" alt="The Evolution Logo" class="logo">
-                <span class="logo-text">THE EVOLUTION</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#product">Product</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <header>
+            <nav class="navbar">
+                <div class="logo-container">
+                    <img src="logo.jpg" alt="The Evolution Logo" class="logo">
+                    <span class="logo-text">THE EVOLUTION</span>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <script src="behave.js"></script>
+    </body>
+    
 
     <section id="home" class="hero">
+
         <div class="logo-shadow">
             <img src="logo.jpg" alt="The Evolution Logo Shadow">
         </div>
@@ -46,11 +56,57 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>At The Evolution, we are committed to delivering quality and satisfaction. Learn more about our story and the values that drive us.</p>
-    </section>
+   <!-- About Section -->
+<section id="about" class="about">
+    <script src="behave.js"></script>   
+    <h2>About Us</h2>
+    <p>At The Evolution, we are committed to delivering quality and satisfaction. Learn more about our story and the values that drive us.</p>
+    <div class="photo-carousel">
+        <div class="person">
+            <img src="person1.jpg" alt="Person 1" class="person-photo">
+            <div class="person-info">
+                <h3>John Doe</h3>
+                <p>CEO</p>
+            </div>
+        </div>
+        <div class="person">
+            <img src="person2.jpg" alt="Person 2" class="person-photo">
+            <div class="person-info">
+                <h3>Jane Smith</h3>
+                <p>Manager</p>
+            </div>
+        </div>
+        <div class="person">
+            <img src="person3.jpg" alt="Person 3" class="person-photo">
+            <div class="person-info">
+                <h3>David Brown</h3>
+                <p>Lead Developer</p>
+            </div>
+        </div>
+        <div class="person">
+            <img src="person4.jpg" alt="Person 4" class="person-photo">
+            <div class="person-info">
+                <h3>Sachintha</h3>
+                <p>Marketing Director</p>
+            </div>
+        </div>
+        <div class="person">
+            <img src="person5.jpg" alt="Person 5" class="person-photo">
+            <div class="person-info">
+                <h3>Poorna</h3>
+                <p>Operations Manager</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOM is fully loaded');
+        // Your existing JS code for behavior.js or anything else
+    });
+</script>
+    
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -62,7 +118,5 @@
     <footer class="footer">
         <p>&copy; 2024 The Evolution. All Rights Reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

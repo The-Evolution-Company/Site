@@ -260,3 +260,149 @@ body {
         font-size: 2rem;
     }
 }
+/* Basic Navbar Styling */
+/* Basic Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* Menu Button (Hamburger) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #fff;
+}
+
+/* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #333;
+        padding-top: 20px;
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+/*------------------------------------------------------------------------------------*/
+/* For the photo carousel */
+/* Gallery container that centers the content */
+.photo-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%; /* Ensure the height is full for the mobile version */
+    padding: 10px 0; /* Optional: to give some padding to the top and bottom */
+}
+
+/* For individual person photos */
+.person {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking of images */
+    margin: 0 20px; /* Reduced margin to better control image spacing */
+}
+
+/* Image styling */
+.person-photo {
+    width: 140px; /* Adjust this size */
+    height: 140px; /* Same size as width to make it a perfect circle */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin:0 40px;
+}
+
+/* Person info styling */
+.person-info {
+    text-align: center;
+}
+
+.person-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.person-info p {
+    margin: 0;
+    font-size: 14px;
+    color: red;
+}
+
+/* Mobile version */
+@media (max-width: 768px) {
+    .photo-carousel {
+        flex-direction: row;
+        height: 200px; /* Control the height for mobile */
+        overflow-x: auto; /* Horizontal scrolling on mobile */
+        padding: 10px 0; /* Padding for mobile */
+    }
+
+    .person {
+        margin: 0 10px; /* Adjust margin for a tighter fit */
+    }
+
+    .person-photo {
+        width: 150px; /* Image size for mobile */
+        margin:0 60px;
+        height: 150px; /* Same size as width to maintain circle shape */
+    }
+}
