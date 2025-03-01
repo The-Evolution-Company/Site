@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (scrollContainer.scrollLeft >= scrollWidth * images.length) {
                     scrollContainer.scrollLeft = 0;
                 }
-            }, 3000);
+            }, 4000);
         }
     }
 
