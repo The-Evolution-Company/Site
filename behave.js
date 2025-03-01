@@ -61,26 +61,57 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.innerWidth <= 768) {
             const scrollContainer = document.querySelector('.photo-carousel');
             const images = document.querySelectorAll('.person');
-            const scrollWidth = images[0].offsetWidth + 20; // Get the width of an image + the gap between them
+            const scrollWidth = images[0].offsetWidth ; // Get the width of an image + the gap between them
 
             // Duplicate the images for the circular scrolling effect
             scrollContainer.innerHTML += scrollContainer.innerHTML;
 
-            let currentIndex = 0;
+            // Add swipe gesture functionality
+            let startX, endX;
 
-            // Auto-scroll the carousel every 3 seconds
-            setInterval(() => {
-                // Scroll the container to the next item by a certain distance
-                scrollContainer.scrollBy({
-                    left: scrollWidth, // Scroll by the width of an image
-                    behavior: 'smooth' // Smooth scrolling effect
-                });
+            // Detect touch start (to determine swipe direction)
+            scrollContainer.addEventListener('touchstart', function (e) {
+                startX = e.touches[0].clientX;
+            });
 
-                // If the container has scrolled past the middle (i.e., second batch of images), reset the scroll position
-                if (scrollContainer.scrollLeft >= scrollWidth * images.length) {
-                    scrollContainer.scrollLeft = 0;
+            // Detect touch end (to calculate swipe distance)
+            scrollContainer.addEventListener('touchend', function (e) {
+                endX = e.changedTouches[0].clientX;
+                let swipeDistance = startX - endX;
+
+                if (Math.abs(swipeDistance) > 50) { // Threshold to trigger the scroll
+                    if (swipeDistance > 0) {
+                        // Swipe left (move to next photo)
+                        scrollContainer.scrollBy({
+                            left: scrollWidth, // Scroll by the width of an image
+                            behavior: 'smooth' // Smooth scrolling effect
+                        });
+                    } else {
+                        // Swipe right (move to previous photo)
+                        scrollContainer.scrollBy({
+                            left: -scrollWidth, // Scroll by the width of an image in reverse direction
+                            behavior: 'smooth' // Smooth scrolling effect
+                        });
+                    }
                 }
-            }, 4000);
+            });
+
+            // Optional: Add mousewheel support for manual scrolling
+            scrollContainer.addEventListener('wheel', function (e) {
+                if (e.deltaY > 0) {
+                    // Scroll to the next image on scroll down
+                    scrollContainer.scrollBy({
+                        left: scrollWidth, // Scroll by the width of an image
+                        behavior: 'smooth' // Smooth scrolling effect
+                    });
+                } else {
+                    // Scroll to the previous image on scroll up
+                    scrollContainer.scrollBy({
+                        left: -scrollWidth, // Scroll by the width of an image in reverse direction
+                        behavior: 'smooth' // Smooth scrolling effect
+                    });
+                }
+            });
         }
     }
 
