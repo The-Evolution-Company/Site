@@ -507,7 +507,7 @@ button:hover {
 @media (max-width: 600px) {
     .button-container {
         flex-direction: row; /* Stacks the buttons vertically */
-        gap: 220px; /* Reduces the gap between buttons */
+        gap: 200px; /* Reduces the gap between buttons */
     }
 
     button {
