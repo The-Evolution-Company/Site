@@ -126,3 +126,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.product-image');
+    const prevButton = document.getElementById('prev-btn');
+    const nextButton = document.getElementById('next-btn');
+
+    // Function to update image visibility
+    function updateCarousel() {
+        images.forEach((image, index) => {
+            if (index === currentIndex) {
+                image.style.display = 'block'; // Show the current image
+            } else {
+                image.style.display = 'none'; // Hide the rest of the images
+            }
+        });
+    }
+
+    // Initialize carousel to show the first image
+    updateCarousel();
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = images.length - 1; // Loop back to the last image
+        }
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Loop back to the first image
+        }
+        updateCarousel();
+    });
+});

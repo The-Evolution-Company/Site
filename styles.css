@@ -10,12 +10,75 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-#product-image { /* Corrected spelling */
-    width: 200px;
-    height: 200px;
-    background-color: #fff;
-    border: 3px solid #da0b0b;
+.product-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
 }
+
+.button-container {
+    display: flex;
+    gap: 350px;
+}
+
+   
+#para {
+    max-width: 700px;
+    margin: 0 auto; /* Centers horizontally */
+    display: flex;
+    font-size: 1.1rem;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+   
+ }
+ 
+.image-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 300px; /* Match image width */
+}
+
+.product-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: none;
+}
+
+.container {
+    position: relative; /* Makes the container the reference point for positioning */
+    display: inline-block; /* Ensures the container doesn’t take up full width */
+}
+
+img {
+    width: 100%; /* Adjusts the image size */
+}
+
+.button-container {
+    position: absolute; /* Positions the buttons relative to the container */
+    top: 50%; /* Centers the button vertically */
+    left: 50%; /* Centers the button horizontally */
+    transform: translate(-50%, -50%); /* Offsets the buttons to ensure they're centered */
+    display: flex; /* Aligns buttons horizontally */
+    gap: 350px; /* Creates a gap between the buttons */
+}
+
+button {
+    background-color: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color:#fff;
+}
+
 
 .navbar {
     display: flex;
@@ -155,12 +218,6 @@ body {
     gap: 1rem;
 }
 
-.product-image {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    border: 3px solid #da0b0b;
-}
 
 .bnt {
     color: red;
