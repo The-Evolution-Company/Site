@@ -10,6 +10,12 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+#product-image { /* Corrected spelling */
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border: 3px solid #da0b0b;
+}
 
 .navbar {
     display: flex;
@@ -203,7 +209,9 @@ body {
     font-size: 1.2rem;
     line-height: 1.8;
 }
-
+#btn{
+    color:red;
+}
 .contact a {
     color: #fff;
     font-weight: bold;
