@@ -460,7 +460,40 @@ button:hover {
         overflow-x: auto; /* Horizontal scrolling on mobile */
         padding: 10px 0; /* Padding for mobile */
     }
-
+    #para {
+        max-width: 700px;
+        margin: 0 auto; /* Centers horizontally */
+        display: flex;
+        font-size: 0.9rem;
+        justify-content: center; /* Centers content horizontally */
+        align-items: center; /* Centers content vertically */
+       
+     }
+     
+    .image-container {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        width: 200px; /* Match image width */
+    }
+    
+    .product-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        display: none;
+    }
+    
+    .container {
+        position: relative; /* Makes the container the reference point for positioning */
+        display: inline-block; /* Ensures the container doesn’t take up full width */
+    }
+    
+    img {
+        width: 100%; /* Adjusts the image size */
+    }
+    
     .person {
         margin: 0 10px; /* Adjust margin for a tighter fit */
     }
@@ -469,5 +502,16 @@ button:hover {
         width: 150px; /* Image size for mobile */
         margin:0 50px;
         height: 150px; /* Same size as width to maintain circle shape */
+    }
+}
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: row; /* Stacks the buttons vertically */
+        gap: 220px; /* Reduces the gap between buttons */
+    }
+
+    button {
+        font-size: 16px; /* Adjusts font size for mobile */
+        padding: 12px 18px; /* Increases padding for better touch accessibility */
     }
 }
